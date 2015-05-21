@@ -6,6 +6,7 @@ app.controller('MyCtrl', function($scope) {
     }
     $scope.disabled = false;
     $scope.menu = [
+        ['placeholder'],
         ['bold', 'italic', 'underline', 'strikethrough', 'subscript', 'superscript'],
         ['format-block'],
         ['font'],
@@ -15,7 +16,7 @@ app.controller('MyCtrl', function($scope) {
         ['ordered-list', 'unordered-list', 'outdent', 'indent'],
         ['left-justify', 'center-justify', 'right-justify'],
         ['code', 'quote', 'paragraph'],
-        ['link', 'image']
+        ['link', 'image'],
     ];
 
     $scope.setDisabled = function() {

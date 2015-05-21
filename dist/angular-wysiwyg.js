@@ -92,6 +92,44 @@ Requires:
       function link(scope, element, attrs, ngModelController) {
         var textarea = element.find('div.wysiwyg-textarea');
         scope.isLink = false;
+        scope.placeholders = [
+          {
+            value: '',
+            name: 'Insert Placeholder'
+          },
+          {
+            value: '[candidate-full-name]',
+            name: 'Candidate Full Name'
+          },
+          {
+            value: '[candidate-first-name]',
+            name: 'Candidate First Name'
+          },
+          {
+            value: '[candidate-last-name]',
+            name: 'Candidate Last Name'
+          },
+          {
+            value: '[sender-full-name]',
+            name: 'Sender Full Name'
+          },
+          {
+            value: '[sender-first-name]',
+            name: 'Sender First Name'
+          },
+          {
+            value: '[sender-last-name]',
+            name: 'Sender Last Name'
+          },
+          {
+            value: '[location]',
+            name: 'Location'
+          },
+          {
+            value: '[position]',
+            name: 'Position'
+          },
+        ];
         scope.fontSizes = [
           {
             value: '1',
@@ -154,6 +192,7 @@ Requires:
         ];
         scope.formatBlock = scope.formatBlocks[0];
         scope.fontSize = scope.fontSizes[1];
+        scope.placeholder = scope.placeholders[0];
         scope.fonts = [
           'Georgia',
           'Palatino Linotype',
@@ -318,6 +357,10 @@ Requires:
         scope.setFontSize = function () {
           scope.format('fontsize', scope.fontSize.value);
         };
+        scope.setPlaceholder = function () {
+          scope.format('insertText', scope.placeholder.value);
+          scope.placeholder = scope.placeholders[0];
+        };
         scope.setFormatBlock = function () {
           scope.format('formatBlock', scope.formatBlock.value);
         };
@@ -380,7 +423,7 @@ Requires:
         } else if (obj.text) {
           el = document.createElement('span');
         } else {
-          console.log('cannot create this element.');
+          console.error('cannot create this element.');
           el = document.createElement('span');
           return el;
         }
@@ -962,6 +1005,28 @@ Requires:
           tag: 'i',
           classes: 'fa fa-unlink'
         }]
-    }
+    },
+    'placeholder': {
+      tag: 'select',
+      classes: 'form-control wysiwyg-select',
+      attributes: [
+        {
+          name: 'title',
+          value: 'Insert Placeholder'
+        },
+        {
+          name: 'ng-model',
+          value: 'placeholder'
+        },
+        {
+          name: 'ng-options',
+          value: 'f.name for f in placeholders'
+        },
+        {
+          name: 'ng-change',
+          value: 'setPlaceholder()'
+        }
+      ]
+    },
   });
 }(angular));
