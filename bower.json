@@ -1,8 +1,8 @@
 {
   "author": "Terry Moore II",
-  "name": "angular-wysiwyg",
+  "name": "angular-wysiwyg-placeholders",
   "description": "Angular WYSIWYG",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "homepage": "https://github.com/TerryMooreII/angular-wysiwyg",
   "main": "./dist/angular-wysiwyg.min.js",
   "dependencies": {
