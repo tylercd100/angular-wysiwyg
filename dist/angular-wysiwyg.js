@@ -93,14 +93,11 @@ Requires:
       function link(scope, element, attrs, ngModelController) {
         var textarea = element.find('div.wysiwyg-textarea');
         scope.isLink = false;
-
         if (angular.isDefined(scope.textareaMenuPlaceholders) && scope.textareaMenuPlaceholders !== '')
           scope.placeholders = scope.textareaMenuPlaceholders;
         else
           scope.placeholders = [];
-
-        console.log(scope.placeholders)
-
+        console.log(scope.placeholders);
         scope.fontSizes = [
           {
             value: '1',
@@ -998,6 +995,6 @@ Requires:
           value: 'setPlaceholder()'
         }
       ]
-    },
+    }
   });
 }(angular));
