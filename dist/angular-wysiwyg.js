@@ -80,6 +80,7 @@ Requires:
           textareaRequired: '@textareaRequired',
           textareaId: '@textareaId',
           textareaMenu: '=textareaMenu',
+          textareaMenuPlaceholders: '=textareaMenuPlaceholders',
           textareaCustomMenu: '=textareaCustomMenu',
           fn: '&',
           disabled: '=?disabled'
@@ -92,44 +93,14 @@ Requires:
       function link(scope, element, attrs, ngModelController) {
         var textarea = element.find('div.wysiwyg-textarea');
         scope.isLink = false;
-        scope.placeholders = [
-          {
-            value: '',
-            name: 'Insert Placeholder'
-          },
-          {
-            value: '[candidate-full-name]',
-            name: 'Candidate Full Name'
-          },
-          {
-            value: '[candidate-first-name]',
-            name: 'Candidate First Name'
-          },
-          {
-            value: '[candidate-last-name]',
-            name: 'Candidate Last Name'
-          },
-          {
-            value: '[sender-full-name]',
-            name: 'Sender Full Name'
-          },
-          {
-            value: '[sender-first-name]',
-            name: 'Sender First Name'
-          },
-          {
-            value: '[sender-last-name]',
-            name: 'Sender Last Name'
-          },
-          {
-            value: '[location]',
-            name: 'Location'
-          },
-          {
-            value: '[position]',
-            name: 'Position'
-          },
-        ];
+
+        if (angular.isDefined(scope.textareaMenuPlaceholders) && scope.textareaMenuPlaceholders !== '')
+          scope.placeholders = scope.textareaMenuPlaceholders;
+        else
+          scope.placeholders = [];
+
+        console.log(scope.placeholders)
+
         scope.fontSizes = [
           {
             value: '1',

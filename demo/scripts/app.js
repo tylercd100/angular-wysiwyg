@@ -18,6 +18,44 @@ app.controller('MyCtrl', function($scope) {
         ['code', 'quote', 'paragraph'],
         ['link', 'image'],
     ];
+    $scope.placeholderOptions = [
+        {
+            value: '',
+            name: 'Insert Placeholder'
+        },
+        {
+            value: '[candidate-full-name]',
+            name: 'Candidate Full Name'
+        },
+        {
+            value: '[candidate-first-name]',
+            name: 'Candidate First Name'
+        },
+        {
+            value: '[candidate-last-name]',
+            name: 'Candidate Last Name'
+        },
+        {
+            value: '[sender-full-name]',
+            name: 'Sender Full Name'
+        },
+        {
+            value: '[sender-first-name]',
+            name: 'Sender First Name'
+        },
+        {
+            value: '[sender-last-name]',
+            name: 'Sender Last Name'
+        },
+        {
+            value: '[location]',
+            name: 'Location'
+        },
+        {
+            value: '[position]',
+            name: 'Position'
+        },
+    ];
 
     $scope.setDisabled = function() {
         $scope.disabled = !$scope.disabled;
