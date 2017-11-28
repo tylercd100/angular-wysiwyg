@@ -1,5 +1,5 @@
 {
-  "name": "angular-wysiwyg",
+  "name": "angular-wysiwyg-extended",
   "version": "1.2.2",
   "description": "AngularJS WYSIWYG editor",
   "main": "./dist/angular-wysiwyg.min.js",
